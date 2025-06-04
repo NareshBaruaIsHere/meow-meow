@@ -2,9 +2,8 @@
 
 Welcome to "Meow Meow - Tales from the Furry Dictator," an interactive and playful cat-themed website designed as a fun front-end project. Dive into a world ruled by adorable feline overlords, filled with humorous decrees, charming cat profiles, and engaging user interactions.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <!-- Optional: Choose a license -->
-
-**Live Demo:** [Link to your GitHub Pages site here] <!-- Replace with your actual deployed link after setting up GitHub Pages -->
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+**Live Demo:** [https://nareshbaruaishere.github.io/meow-meow/]
 
 ![Screenshot of Meow Meow Website](./img/meow-meow-preview.jpg)
 <!-- 
