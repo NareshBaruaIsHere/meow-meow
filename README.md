@@ -6,7 +6,7 @@ Welcome to "Meow Meow - Tales from the Furry Dictator," an interactive and playf
 
 **Live Demo:** [Link to your GitHub Pages site here] <!-- Replace with your actual deployed link after setting up GitHub Pages -->
 
-![Screenshot of Meow Meow Website](https://placehold.co/800x450/F24C8C/white?text=Meow+Meow+Homepage+Screenshot&font=roboto)
+![Screenshot of Meow Meow Website](./img/meow-meow-preview.jpg)
 <!-- 
   IMPORTANT: Replace the placeholder above with an actual screenshot of your website!
   You can upload a screenshot to an "assets" or "img" folder in your repo and link it like: ./img/screenshot.png 
