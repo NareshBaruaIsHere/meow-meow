@@ -1,0 +1,147 @@
+/* Global transitions for smoother effects */
+body, header, section, article, footer, #custom-modal-content, #game-area, .mobile-menu {
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Basic style for mobile menu functionality */
+.mobile-menu {
+  display: none; /* Hidden by default */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, background-color 0.3s ease-in-out;
+}
+.mobile-menu.active {
+  display: block; /* Shown when active */
+  max-height: 500px; /* Adjust as needed */
+}
+
+/* Custom Modal Styles */
+.modal-overlay {
+  transition: opacity 0.3s ease-in-out;
+}
+.modal-content {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* --- Loader Styles --- */
+#loader-overlay {
+  transition: opacity 0.5s ease-out;
+}
+/* Tailwind's animate-spin for image loader should work. */
+/* CSS Paw Loader (if you choose this option over image loader) */
+.paw-loader {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.paw-loader-dot {
+  width: 20px;
+  height: 20px;
+  background-color: #F24C8C; /* Cat pink */
+  border-radius: 50%;
+  position: absolute;
+  animation: paw-bounce 1.2s infinite ease-in-out;
+}
+.paw-loader-dot:nth-child(1) { top: 0; left: 30px; animation-delay: -0.32s; } /* Main pad */
+.paw-loader-dot:nth-child(2) { top: 25px; left: 0; animation-delay: -0.16s; }
+.paw-loader-dot:nth-child(3) { top: 45px; left: 25px; animation-delay: 0s; }
+.paw-loader-dot:nth-child(4) { top: 25px; left: 50px; animation-delay: -0.08s; }
+
+@keyframes paw-bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1.0); }
+}
+
+
+/* --- Cursor Trail --- */
+.cursor-trail-element {
+  position: fixed;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(242, 76, 140, 0.5); /* Cat pink, semi-transparent */
+  opacity: 1;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* Uncomment if using an image for cursor trail
+.cursor-trail-element.image-trail {
+  background-image: url('./img/tiny_paw.png'); // Make sure path is correct relative to CSS or use absolute path
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent; // No color if using image
+  border-radius: 0; // No radius if using image unless desired
+}
+*/
+
+
+/* --- Feed the Cat --- */
+#interactive-cat-image.cat-happy {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* --- Clickable Background Elements --- */
+.clickable-bg-element {
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+.clickable-bg-element:hover {
+  transform: scale(1.5);
+}
+.clickable-bg-element.clicked-effect {
+  animation: sparkle-effect 0.5s ease-out;
+}
+
+@keyframes sparkle-effect {
+  0% { transform: scale(1.2) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.6) rotate(15deg); opacity: 0.7; }
+  100% { transform: scale(1.2) rotate(0deg); opacity: 1; }
+}
+
+
+/* --- Enhanced Button Hovers --- */
+.hero-meow-button:hover,
+.cat-meow-button:hover,
+#new-joke-button:hover,
+#start-game-button:hover,
+#feed-cat-button:hover,
+#modal-ok-button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.10);
+  /* Opacity is often handled by Tailwind's hover:opacity-90, adjust if needed */
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, opacity 0.15s ease-out;
+}
+
+.cat-meow-button:hover .fa-paw,
+.hero-meow-button:hover .fa-paw,
+#feed-cat-button:hover .fa-fish,
+#start-game-button:hover .fa-play,
+#new-joke-button:hover .fa-dice {
+  transform: rotate(-10deg) scale(1.1);
+  transition: transform 0.15s ease-in-out;
+}
+/* Reset icon transform when not hovering the button */
+.cat-meow-button .fa-paw,
+.hero-meow-button .fa-paw,
+#feed-cat-button .fa-fish,
+#start-game-button .fa-play,
+#new-joke-button .fa-dice {
+  transition: transform 0.15s ease-in-out;
+}
+
+/* Game Corner - Paw Styling */
+#game-paw-icon {
+    position: absolute;
+    font-size: 36px;
+    color: #F24C8C; /* Cat pink color */
+    user-select: none;
+    transition: transform 0.1s ease-out, top 0.15s ease-out, left 0.15s ease-out;
+    will-change: top, left, transform;
+}
+
+#game-paw-icon:hover {
+    transform: scale(1.15);
+}

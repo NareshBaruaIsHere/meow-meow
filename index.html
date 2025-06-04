@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to Meow Meow - Tales from the Furry Dictator! Discover the hilarious and adorable world of our feline overlords, one nap and meow at a time."
+    />
+    <title>Meow Meow - Tales from the Furry Dictator</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="font-['Roboto',_sans-serif] text-gray-800 antialiased bg-white">
+    <div
+      id="loader-overlay"
+      class="fixed inset-0 bg-white z-[100] flex flex-col items-center justify-center"
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="w-24 h-24"
+        id="loader-video-cat"
+      >
+        <source src="./img/loader_cat.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <header class="py-6 shadow-md bg-white sticky top-0 z-40">
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between"
+      >
+        <div>
+          <a href="#home" title="Homepage">
+            <img
+              src="./img/logo.png"
+              class="w-[150px] sm:w-[200px] md:w-[240px]"
+              alt="Meow Meow Brand Logo"
+              onerror="this.onerror=null;this.src='https://placehold.co/240x60/F24C8C/white?text=Meow+Logo&font=roboto';"
+            />
+          </a>
+        </div>
+        <nav class="hidden sm:block">
+          <a
+            class="font-medium text-gray-700 hover:text-[#F24C8C] mr-6 md:mr-8 lg:mr-10 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-sm"
+            href="#home"
+            >Home Den</a
+          >
+          <a
+            class="font-medium text-gray-700 hover:text-[#F24C8C] mr-6 md:mr-8 lg:mr-10 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-sm"
+            href="#products"
+            >Council of Meows</a
+          >
+          <a
+            class="font-medium text-gray-700 hover:text-[#F24C8C] mr-6 md:mr-8 lg:mr-10 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-sm"
+            href="#about"
+            >Dictator’s Decrees</a
+          >
+          <a
+            class="font-medium text-gray-700 hover:text-[#F24C8C] mr-6 md:mr-8 lg:mr-10 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-sm"
+            href="#feed-the-cat"
+            >Feed Kitty</a
+          >
+          <a
+            class="font-medium text-gray-700 hover:text-[#F24C8C] mr-6 md:mr-8 lg:mr-10 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-sm"
+            href="#game-corner"
+            >Game Corner</a
+          >
+          <a
+            class="font-medium text-gray-700 hover:text-[#F24C8C] transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-sm"
+            href="#contact"
+            >Contact</a
+          >
+        </nav>
+        <div class="flex items-center">
+          <div class="sm:hidden">
+            <button
+              id="mobile-menu-button"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 text-gray-700"
+            >
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        id="mobile-menu"
+        class="mobile-menu sm:hidden mt-2 px-2 sm:px-6 lg:px-8 bg-white pb-3"
+      >
+        <a
+          href="#home"
+          class="block py-2 px-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-[#F24C8C] rounded-md"
+          >Home Den</a
+        >
+        <a
+          href="#products"
+          class="block py-2 px-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-[#F24C8C] rounded-md"
+          >Council of Meows</a
+        >
+        <a
+          href="#about"
+          class="block py-2 px-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-[#F24C8C] rounded-md"
+          >Dictator’s Decrees</a
+        >
+        <a
+          href="#feed-the-cat"
+          class="block py-2 px-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-[#F24C8C] rounded-md"
+          >Feed Kitty</a
+        >
+        <a
+          href="#game-corner"
+          class="block py-2 px-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-[#F24C8C] rounded-md"
+          >Game Corner</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 px-3 text-base font-medium text-gray-700 hover:bg-purple-50 hover:text-[#F24C8C] rounded-md"
+          >Contact the Council</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="home"
+        class="container mx-auto px-4 sm:px-6 lg:px-8 mt-6 mb-12 sm:mb-16 md:mb-20 py-10 relative"
+      >
+        <div
+          class="flex flex-col sm:flex-row justify-between items-center gap-8"
+        >
+          <div
+            class="w-full sm:w-1/2 text-center sm:text-left"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl uppercase font-['Bebas_Neue',_cursive] leading-tight text-gray-800"
+            >
+              <span class="text-[#F24C8C]">Tales from the</span> <br />
+              Furry Dictator
+            </h1>
+            <p
+              class="mt-4 sm:mt-5 text-base sm:text-lg text-gray-600"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
+              They rule the roost, one nap at a time. Resistance is futile (and
+              frankly, too much effort).
+            </p>
+            <button
+              class="hero-meow-button px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg text-white font-semibold uppercase mt-6 sm:mt-8 text-sm sm:text-base hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
+              data-message="The Furry Dictator acknowledges your click with a slight tail twitch. Consider yourself blessed. 🐾"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <i class="fa-solid fa-paw mr-2"></i> Click for Wisdom
+            </button>
+          </div>
+          <div
+            class="w-full sm:w-1/2 sm:pl-8 md:pl-12 lg:pl-[80px] mt-6 sm:mt-0"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <img
+              src="./img/hero.png"
+              class="w-full rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300"
+              alt="A majestic cat looking regal, representing the furry dictator."
+              onerror="this.onerror=null;this.src='https://placehold.co/600x450/c58787/white?text=Regal+Cat+Overlord&font=bebas-neue';"
+            />
+          </div>
+        </div>
+        <span
+          class="clickable-bg-element"
+          data-sound="sounds/sparkle.mp3"
+          style="position: absolute; top: 15%; right: 8%; cursor: pointer"
+          title="Ooh, shiny!"
+          data-aos="zoom-in"
+          data-aos-delay="800"
+        >
+          <i
+            class="fa-solid fa-star text-yellow-400 text-sm opacity-70 hover:opacity-100"
+          ></i>
+        </span>
+      </section>
+
+      <section
+        id="products"
+        class="bg-gray-50 py-12 sm:py-16 md:py-20 relative"
+      >
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl uppercase font-['Bebas_Neue',_cursive] text-center mb-8 sm:mb-12 text-gray-700"
+            data-aos="fade-up"
+          >
+            Meet the Council of Meows
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          >
+            <article
+              class="p-4 sm:p-6 rounded-3xl shadow-2xl bg-white flex flex-col transition-all duration-300 hover:shadow-pink-200 hover:-translate-y-1"
+              data-aos="zoom-in-up"
+            >
+              <div
+                class="bg-[#c58787] rounded-2xl overflow-hidden flex justify-center items-center h-[200px] sm:h-[250px]"
+              >
+                <img
+                  src="./img/cat_1.png"
+                  class="w-auto auto object-contain p-2"
+                  alt="A cool cat wearing sunglasses."
+                  onerror="this.onerror=null;this.src='https://placehold.co/300x250/77A2B5/FFFFFF?text=Cool+Cat+1&font=roboto';"
+                />
+              </div>
+              <div class="flex-grow mt-4">
+                <h3 class="text-xl font-bold text-gray-900">
+                  The Coolest Cat in Town
+                </h3>
+                <p class="mt-2 text-sm text-gray-600">
+                  This feline's future is so bright, he's gotta wear shades.
+                  Probably napping behind them.
+                </p>
+              </div>
+              <div
+                class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4"
+              >
+                <p
+                  class="text-2xl sm:text-3xl font-semibold text-[#F24C8C] font-['Bebas_Neue',_cursive]"
+                >
+                  Mittens
+                </p>
+                <button
+                  class="cat-meow-button w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold uppercase text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                  data-cat-name="Mittens"
+                  data-message="Mittens raises an eyebrow, impressed by your audacity to click. 'Hmph. Adequate.' 🐾"
+                  data-audio="sounds/meow1.mp3"
+                >
+                  <i class="fa-solid fa-paw mr-2"></i> Click Meow
+                </button>
+              </div>
+            </article>
+
+            <article
+              class="p-4 sm:p-6 rounded-3xl shadow-2xl bg-white flex flex-col transition-all duration-300 hover:shadow-pink-200 hover:-translate-y-1"
+              data-aos="zoom-in-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="bg-[#c5bf87] rounded-2xl overflow-hidden flex justify-center items-center h-[200px] sm:h-[250px]"
+              >
+                <img
+                  src="./img/cat_2.png"
+                  class="w-auto max-h-full object-contain p-2 translate-y-4"
+                  alt="A wide-eyed cat looking surprised."
+                  onerror="this.onerror=null;this.src='https://placehold.co/300x250/B577A2/FFFFFF?text=Surprised+Cat+2&font=roboto';"
+                />
+              </div>
+              <div class="flex-grow mt-4">
+                <h3 class="text-xl font-bold text-gray-900">
+                  Wide-Eyed Wonder
+                </h3>
+                <p class="mt-2 text-sm text-gray-600">
+                  When the catnip hits just right, or they spot a rogue dust
+                  bunny.
+                </p>
+              </div>
+              <div
+                class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4"
+              >
+                <p
+                  class="text-2xl sm:text-3xl font-semibold text-[#F24C8C] font-['Bebas_Neue',_cursive]"
+                >
+                  Whiskers
+                </p>
+                <button
+                  class="cat-meow-button w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold uppercase text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                  data-cat-name="Whiskers"
+                  data-audio="sounds/meow2.mp3"
+                  data-message="Whiskers stares into your soul. 'You clicked. Interesting maneuver.' 🐾"
+                >
+                  <i class="fa-solid fa-paw mr-2"></i> Click Meow
+                </button>
+              </div>
+            </article>
+
+            <article
+              class="p-4 sm:p-6 rounded-3xl shadow-2xl bg-white flex flex-col transition-all duration-300 hover:shadow-pink-200 hover:-translate-y-1"
+              data-aos="zoom-in-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="bg-[#adc587] rounded-2xl overflow-hidden flex justify-center items-center h-[200px] sm:h-[250px]"
+              >
+                <img
+                  src="./img/cat_3.png"
+                  class="w-[250px] object-contain p-2 translate-y-5"
+                  alt="A cat giving a thumbs up gesture."
+                  onerror="this.onerror=null;this.src='https://placehold.co/300x250/A2B577/FFFFFF?text=Thumbs+Up+Cat+3&font=roboto';"
+                />
+              </div>
+              <div class="flex-grow mt-4">
+                <h3 class="text-xl font-bold text-gray-900">
+                  Thumbs Up, Paws Down!
+                </h3>
+                <p class="mt-2 text-sm text-gray-600">
+                  This cat approves of your life choices... as long as they
+                  involve more treats.
+                </p>
+              </div>
+              <div
+                class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4"
+              >
+                <p
+                  class="text-2xl sm:text-3xl font-semibold text-[#F24C8C] font-['Bebas_Neue',_cursive]"
+                >
+                  Patches
+                </p>
+                <button
+                  class="cat-meow-button w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold uppercase text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                  data-cat-name="Patches"
+                  data-audio="sounds/meow3.mp3"
+                  data-message="Patches gives a slow blink of approval. 'Your click has been noted in the annals of Meow.' 🐾"
+                >
+                  <i class="fa-solid fa-paw mr-2"></i> Click Meow
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+        <span
+          class="clickable-bg-element"
+          data-sound="sounds/tiny_meow.mp3"
+          style="position: absolute; bottom: 5%; left: 2%; cursor: pointer"
+          title="Psst!"
+          data-aos="zoom-in"
+          data-aos-delay="500"
+        >
+          <i
+            class="fa-solid fa-cat text-purple-400 text-lg opacity-60 hover:opacity-100"
+          ></i>
+        </span>
+      </section>
+
+      <section
+        id="more-meow"
+        class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 md:mt-20 mb-12 sm:mb-16 md:mb-20"
+      >
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl uppercase font-['Bebas_Neue',_cursive] text-center sm:text-left mb-8 sm:mb-10 text-gray-700"
+          data-aos="fade-right"
+        >
+          Want more meow?!
+          <span class="text-sm normal-case text-gray-500"
+            >(Of course you do)</span
+          >
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+        >
+          <article
+            class="p-4 sm:p-6 rounded-3xl shadow-2xl bg-white flex flex-col transition-all duration-300 hover:shadow-pink-200 hover:-translate-y-1"
+            data-aos="fade-up"
+          >
+            <div
+              class="bg-[#87c5c2] rounded-2xl overflow-hidden flex justify-center items-center h-[200px] sm:h-[250px]"
+            >
+              <img
+                src="./img/cat_4.png"
+                class="w-auto max-h-full object-contain p-2"
+                alt="An ecstatic looking cat."
+                onerror="this.onerror=null;this.src='https://placehold.co/300x250/778BB5/FFFFFF?text=Ecstatic+Cat+4&font=roboto';"
+              />
+            </div>
+            <div class="flex-grow mt-4">
+              <h3 class="text-xl font-bold text-gray-900">
+                Pawsitively Ecstatic!
+              </h3>
+              <p class="mt-2 text-sm text-gray-600">
+                When you finally get that high-up treat, or the human remembers
+                the good scritches.
+              </p>
+            </div>
+            <div
+              class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4"
+            >
+              <p
+                class="text-2xl sm:text-3xl font-semibold text-[#F24C8C] font-['Bebas_Neue',_cursive]"
+              >
+                Shadow
+              </p>
+              <button
+                class="cat-meow-button w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold uppercase text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                data-cat-name="Shadow"
+                data-audio="sounds/meow4.mp3"
+                data-message="Shadow emerges from the darkness to acknowledge your click with a mysterious 'Mrrrrow'. 🐾"
+              >
+                <i class="fa-solid fa-paw mr-2"></i> Click Meow
+              </button>
+            </div>
+          </article>
+          <article
+            class="p-4 sm:p-6 rounded-3xl shadow-2xl bg-white flex flex-col transition-all duration-300 hover:shadow-pink-200 hover:-translate-y-1"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="bg-[#879dc5] rounded-2xl overflow-hidden flex justify-center items-center h-[200px] sm:h-[250px]"
+            >
+              <img
+                src="./img/cat_5.png"
+                class="w-[260px] object-contain p-2 translate-y-4"
+                alt="A cat looking like it's armed and ready."
+                onerror="this.onerror=null;this.src='https://placehold.co/300x250/B5A277/FFFFFF?text=Armed+Cat+5&font=roboto';"
+              />
+            </div>
+            <div class="flex-grow mt-4">
+              <h3 class="text-xl font-bold text-gray-900">Purr-fectly Armed</h3>
+              <p class="mt-2 text-sm text-gray-600">
+                Don't mess with this feline, he means business. Especially if
+                you're a rogue feather.
+              </p>
+            </div>
+            <div
+              class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4"
+            >
+              <p
+                class="text-2xl sm:text-3xl font-semibold text-[#F24C8C] font-['Bebas_Neue',_cursive]"
+              >
+                Bandit
+              </p>
+              <button
+                class="cat-meow-button w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold uppercase text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                data-cat-name="Bandit"
+                data-audio="sounds/meow5.mp3"
+                data-message="Bandit considers stealing your heart (and maybe that shiny thing on your desk). 'Mraow?' 🐾"
+              >
+                <i class="fa-solid fa-paw mr-2"></i> Click Meow
+              </button>
+            </div>
+          </article>
+          <article
+            class="p-4 sm:p-6 rounded-3xl shadow-2xl bg-white flex flex-col transition-all duration-300 hover:shadow-pink-200 hover:-translate-y-1"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="bg-[#bb87c5] rounded-2xl overflow-hidden flex justify-center items-center h-[200px] sm:h-[250px]"
+            >
+              <img
+                src="./img/cat_6.png"
+                class="w-[250px] object-contain p-2 -rotate-90 translate-y-2"
+                alt="A cat peeking with cute eyes."
+                onerror="this.onerror=null;this.src='https://placehold.co/300x250/77B5A2/FFFFFF?text=Peeking+Cat+6&font=roboto';"
+              />
+            </div>
+            <div class="flex-grow mt-4">
+              <h3 class="text-xl font-bold text-gray-900">
+                Peek-a-Boo, I See You!
+              </h3>
+              <p class="mt-2 text-sm text-gray-600">
+                Those eyes just melted my heart. And probably plotted world
+                domination.
+              </p>
+            </div>
+            <div
+              class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4"
+            >
+              <p
+                class="text-2xl sm:text-3xl font-semibold text-[#F24C8C] font-['Bebas_Neue',_cursive]"
+              >
+                Oliver
+              </p>
+              <button
+                class="cat-meow-button w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold uppercase text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                data-cat-name="Oliver"
+                data-audio="sounds/meow6.mp3"
+                data-message="Oliver purrs contentedly. 'Ah, a click. Most satisfactory. Now, about those treats...' 🐾"
+              >
+                <i class="fa-solid fa-paw mr-2"></i> Click Meow
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="funny-section-title"
+        id="about"
+        class="bg-pink-50 py-12 sm:py-16 md:py-20"
+      >
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2
+            id="funny-section-title"
+            class="text-3xl sm:text-4xl md:text-5xl uppercase font-['Bebas_Neue',_cursive] text-[#F24C8C] mb-8 sm:mb-12"
+            data-aos="fade-up"
+          >
+            A Purr-fect Dose of Humor!
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8 text-left">
+            <article
+              class="bg-white p-6 rounded-lg shadow-lg"
+              data-aos="fade-right"
+              data-aos-delay="100"
+            >
+              <h3
+                class="text-2xl font-['Bebas_Neue',_cursive] text-gray-700 mb-3 flex items-center"
+              >
+                The Dictator's Daily Decrees
+                <i class="fa-solid fa-scroll ml-2 text-xl text-yellow-500"></i>
+              </h3>
+              <ul
+                class="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base"
+              >
+                <li>
+                  All sunbeams are reserved for feline use only. Trespassers
+                  will be judged silently.
+                </li>
+                <li>
+                  The red dot is an existential threat and must be vanquished
+                  daily. No excuses.
+                </li>
+                <li>
+                  Empty food bowls are a declaration of war, punishable by loud
+                  meows at 3 AM.
+                </li>
+                <li>
+                  Worship (and treats) shall be provided on demand. Delays will
+                  be noted.
+                </li>
+                <li>
+                  The keyboard is the warmest, most comfortable bed. Human work
+                  is secondary. Always.
+                </li>
+                <li>
+                  Sudden sprints across the room at top speed for no apparent
+                  reason are mandatory.
+                </li>
+              </ul>
+            </article>
+
+            <article
+              class="bg-white p-6 rounded-lg shadow-lg"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              <h3
+                class="text-2xl font-['Bebas_Neue',_cursive] text-gray-700 mb-3 flex items-center"
+              >
+                Cat Joke Corner
+                <i
+                  class="fa-solid fa-face-grin-tears ml-2 text-xl text-blue-500"
+                ></i>
+              </h3>
+              <div
+                id="cat-joke-container"
+                class="min-h-[80px] mb-4 text-gray-600"
+              ></div>
+              <button
+                id="new-joke-button"
+                class="px-5 py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 text-sm font-semibold transition-colors"
+              >
+                <i class="fa-solid fa-dice mr-2"></i> Get Another Joke!
+              </button>
+            </article>
+          </div>
+
+          <div class="mt-10 sm:mt-12" data-aos="zoom-in" data-aos-delay="300">
+            <h3
+              class="text-2xl font-['Bebas_Neue',_cursive] text-gray-700 mb-4"
+            >
+              Feline Funnies: Image of the Day
+            </h3>
+            <img
+              src="./img/Funny/C1.jpeg"
+              alt="A hilariously goofy cat"
+              class="mx-auto rounded-lg shadow-xl max-w-md w-full"
+              onerror="this.onerror=null;this.src='https://placehold.co/500x350/DDDDDD/grey?text=Funny+Cat+Meme&font=roboto';"
+            />
+            <p class="text-xs text-gray-500 mt-2 italic">
+              "They said I could be anything, so I became a loaf."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="feed-the-cat" class="py-12 sm:py-16 md:py-20 bg-amber-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl uppercase font-['Bebas_Neue',_cursive] text-amber-600 mb-8"
+            data-aos="fade-up"
+          >
+            Time to Feed the Kitty!
+          </h2>
+          <div class="max-w-xs mx-auto" data-aos="zoom-in" data-aos-delay="200">
+            <img
+              src="./img/normal_cat.png"
+              id="interactive-cat-image"
+              alt="A cute cat"
+              class="mx-auto mb-6 rounded-lg shadow-lg w-64 h-64 object-cover transition-transform duration-300 ease-in-out"
+            />
+            <button
+              id="feed-cat-button"
+              class="px-8 py-4 bg-gradient-to-r from-green-500 to-lime-600 text-white rounded-lg font-semibold uppercase text-sm hover:opacity-90 transition-all duration-150 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
+            >
+              <i class="fa-solid fa-fish mr-2"></i> Feed Me!
+            </button>
+            <p
+              id="feed-cat-message"
+              class="mt-4 text-sm text-gray-600 italic h-5"
+            >
+              Ready for a snack!
+            </p>
+          </div>
+        </div>
+      </section>
+      <audio id="cat-eat-sound" src="sounds/cat_eat.mp3"></audio>
+
+      <section id="game-corner" class="py-12 sm:py-16 md:py-20 bg-purple-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl uppercase font-['Bebas_Neue',_cursive] text-purple-600 mb-8 sm:mb-12"
+            data-aos="fade-up"
+          >
+            Playful Paws Game Corner
+          </h2>
+          <div
+            class="bg-white p-6 sm:p-8 rounded-lg shadow-xl max-w-2xl mx-auto"
+            data-aos="zoom-in-up"
+            data-aos-delay="200"
+          >
+            <h3
+              class="text-2xl font-['Bebas_Neue',_cursive] text-gray-700 mb-4"
+            >
+              Catch the Paw!
+            </h3>
+            <p class="text-gray-600 mb-2">
+              Click the paw as many times as you can in 15 seconds!
+            </p>
+            <div class="mb-4 text-lg">
+              <span class="font-semibold text-pink-500"
+                >Score: <span id="game-score">0</span></span
+              >
+              <span class="ml-4 font-semibold text-blue-500"
+                >Time: <span id="game-time">15</span>s</span
+              >
+            </div>
+            <button
+              id="start-game-button"
+              class="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 font-semibold uppercase text-sm transition-colors mb-4"
+            >
+              <i class="fa-solid fa-play mr-2"></i>Start Game
+            </button>
+            <div
+              id="game-area"
+              class="w-full h-64 bg-gray-100 rounded-md relative overflow-hidden border-2 border-gray-300 cursor-pointer"
+            ></div>
+            <p id="game-message" class="text-gray-600 mt-4 text-sm italic"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-800 text-gray-300 py-10 text-center">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-4">
+          <button
+            id="ambient-sound-toggle"
+            title="Toggle Ambient Sound"
+            class="p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+          >
+            <i class="fa-solid fa-volume-mute text-xl"></i>
+          </button>
+        </div>
+        <div class="mb-4">
+          <a
+            href="https://www.facebook.com/nareshbarua72/"
+            class="text-gray-400 hover:text-white mx-2 text-xl"
+            aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/naresh_barua/?hl=en"
+            class="text-gray-400 hover:text-white mx-2 text-xl"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://twitter.com/yourusername"
+            class="text-gray-400 hover:text-white mx-2 text-xl"
+            aria-label="Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="mailto:nareshbarua72@gmail.com"
+            class="text-gray-400 hover:text-white mx-2 text-xl"
+            aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+        <p class="text-sm">
+          &copy; <span id="current-year"></span> Meow Meow Inc. All Paws
+          Reserved.
+        </p>
+        <p class="text-xs mt-1">Governed by the Supreme Feline Council.</p>
+        <p class="text-xs mt-1 text-gray-400">Site by Naresh Barua</p>
+      </div>
+    </footer>
+    <audio id="ambient-purr" src="sounds/purr_loop_2.mp3" loop></audio>
+    <audio id="clickable-bg-sound-player" src=""></audio>
+    
+
+    <div
+      id="custom-modal-overlay"
+      class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50 opacity-0 flex"
+    >
+      <div
+        id="custom-modal-content"
+        class="modal-content bg-white p-6 sm:p-8 rounded-lg shadow-xl w-full max-w-md transform scale-95"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <h3
+            id="modal-title"
+            class="text-xl font-bold text-gray-800 font-['Bebas_Neue',_cursive]"
+          >
+            Notification
+          </h3>
+          <button
+            id="modal-close-button"
+            aria-label="Close modal"
+            class="text-gray-500 hover:text-gray-700 text-2xl"
+          >
+            &times;
+          </button>
+        </div>
+        <p id="modal-message" class="text-gray-600 text-sm sm:text-base"></p>
+        <div class="mt-6 text-right">
+          <button
+            id="modal-ok-button"
+            class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // Set volume to 100% (maximum)
+      document.getElementById("ambient-purr").volume = 1.0;
+      document.getElementById("clickable-bg-sound-player").volume = 1.0;
+    </script>
+  </body>
+</html>
