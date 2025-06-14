@@ -394,4 +394,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (startGameButton) {
     startGameButton.addEventListener("click", startGame);
   }
+
+  // Set default volumes for audio elements
+  document.getElementById("ambient-purr").volume = 1.0;
+  document.getElementById("clickable-bg-sound-player").volume = 1.0;
 });
