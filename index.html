@@ -25,6 +25,13 @@
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      html,
+      body {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+    </style>
   </head>
   <body class="font-['Roboto',_sans-serif] text-gray-800 antialiased bg-white">
     <div
@@ -43,15 +50,15 @@
         Your browser does not support the video tag.
       </video>
     </div>
-    <header class="py-6 shadow-md bg-white sticky top-0 z-40">
+    <header class="py-4 sm:py-6 shadow-md bg-white sticky top-0 z-40">
       <div
-        class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between"
+        class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 flex items-center justify-between"
       >
-        <div>
+        <div class="flex-shrink-0">
           <a href="#home" title="Homepage">
             <img
               src="./img/logo.png"
-              class="w-[150px] sm:w-[200px] md:w-[240px]"
+              class="w-[120px] sm:w-[160px] md:w-[200px] lg:w-[240px] max-w-full h-auto"
               alt="Meow Meow Brand Logo"
               onerror="this.onerror=null;this.src='https://placehold.co/240x60/F24C8C/white?text=Meow+Logo&font=roboto';"
             />
@@ -105,7 +112,7 @@
       </div>
       <div
         id="mobile-menu"
-        class="mobile-menu sm:hidden mt-2 px-2 sm:px-6 lg:px-8 bg-white pb-3"
+        class="mobile-menu sm:hidden mt-2 px-2 sm:px-6 lg:px-8 bg-white pb-3 w-full"
       >
         <a
           href="#home"
@@ -143,7 +150,7 @@
     <main>
       <section
         id="home"
-        class="container mx-auto px-4 sm:px-6 lg:px-8 mt-6 mb-12 sm:mb-16 md:mb-20 py-10 relative"
+        class="container mx-auto px-3 sm:px-6 lg:px-8 mt-6 mb-12 sm:mb-16 md:mb-20 py-8 sm:py-10 relative"
       >
         <div
           class="flex flex-col sm:flex-row justify-between items-center gap-8"
@@ -154,13 +161,13 @@
             data-aos-delay="100"
           >
             <h1
-              class="text-4xl sm:text-5xl md:text-6xl uppercase font-['Bebas_Neue',_cursive] leading-tight text-gray-800"
+              class="text-3xl sm:text-5xl md:text-6xl uppercase font-['Bebas_Neue',_cursive] leading-tight text-gray-800"
             >
               <span class="text-[#F24C8C]">Tales from the</span> <br />
               Furry Dictator
             </h1>
             <p
-              class="mt-4 sm:mt-5 text-base sm:text-lg text-gray-600"
+              class="mt-3 sm:mt-5 text-base sm:text-lg text-gray-600"
               data-aos="fade-right"
               data-aos-delay="300"
             >
@@ -168,7 +175,7 @@
               frankly, too much effort).
             </p>
             <button
-              class="hero-meow-button px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg text-white font-semibold uppercase mt-6 sm:mt-8 text-sm sm:text-base hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
+              class="hero-meow-button px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg text-white font-semibold uppercase mt-5 sm:mt-8 text-sm sm:text-base hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
               data-message="The Furry Dictator acknowledges your click with a slight tail twitch. Consider yourself blessed. 🐾"
               data-aos="fade-up"
               data-aos-delay="500"
@@ -183,7 +190,7 @@
           >
             <img
               src="./img/hero.png"
-              class="w-full rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300"
+              class="w-full max-w-xs sm:max-w-full rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 mx-auto"
               alt="A majestic cat looking regal, representing the furry dictator."
               onerror="this.onerror=null;this.src='https://placehold.co/600x450/c58787/white?text=Regal+Cat+Overlord&font=bebas-neue';"
             />
@@ -727,7 +734,6 @@
     </footer>
     <audio id="ambient-purr" src="sounds/purr_loop_2.mp3" loop></audio>
     <audio id="clickable-bg-sound-player" src=""></audio>
-    
 
     <div
       id="custom-modal-overlay"
@@ -735,7 +741,7 @@
     >
       <div
         id="custom-modal-content"
-        class="modal-content bg-white p-6 sm:p-8 rounded-lg shadow-xl w-full max-w-md transform scale-95"
+        class="modal-content bg-white p-4 sm:p-8 rounded-lg shadow-xl w-full max-w-xs sm:max-w-md transform scale-95"
       >
         <div class="flex justify-between items-center mb-4">
           <h3
