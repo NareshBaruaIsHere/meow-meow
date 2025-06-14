@@ -145,3 +145,81 @@ body, header, section, article, footer, #custom-modal-content, #game-area, .mobi
 #game-paw-icon:hover {
     transform: scale(1.15);
 }
+
+/* Prevent horizontal scroll on all devices */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Responsive modal content */
+.modal-content {
+  width: 100%;
+  max-width: 90vw;
+  box-sizing: border-box;
+}
+
+/* Responsive images */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive grid for cards */
+.grid {
+  grid-template-columns: 1fr !important;
+}
+@media (min-width: 640px) {
+  .grid.sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (min-width: 1024px) {
+  .grid.lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Responsive paddings for containers */
+.container {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Responsive modal overlay padding */
+.modal-overlay {
+  padding: 1rem;
+}
+@media (min-width: 640px) {
+  .modal-overlay {
+    padding: 2rem;
+  }
+}
+
+/* Responsive font sizes for headings */
+h1, .text-4xl, .text-5xl, .text-6xl {
+  font-size: 2rem;
+}
+@media (min-width: 640px) {
+  h1, .text-4xl, .text-5xl, .text-6xl {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 768px) {
+  h1, .text-4xl, .text-5xl, .text-6xl {
+    font-size: 3rem;
+  }
+}
